@@ -30,4 +30,12 @@
         </insert>
     </changeSet>
 
+    <changeSet id="add i love you" author="fas">
+        <insert tableName="example_table">
+            <column name="id" value="3" />
+            <column name="name" value="Ich liebe dich mein Mädchen" />
+            <column name="value" value="500000000" />
+        </insert>
+    </changeSet>
+
 </databaseChangeLog>
