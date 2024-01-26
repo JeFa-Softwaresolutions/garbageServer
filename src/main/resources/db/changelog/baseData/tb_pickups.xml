@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet id="create tb_pickups" author="fas">
+        <createTable tableName="tb_pickups">
+            <column name="autoid" type="BIGINT" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false" unique="true"/>
+            </column>
+            <column name="date" type="DATE">
+                <constraints nullable="false"/>
+            </column>
+            <column name="pickup_district_ref" type="BIGINT">
+                <constraints foreignKeyName="fk_pickups_pickup_districts" referencedTableName="tb_pickup_districts" referencedColumnNames="autoid"/>
+            </column>
+            <column name="trash_type_ref" type="BIGINT">
+                <constraints foreignKeyName="fk_pickups_trash_types" referencedTableName="tb_trash_types" referencedColumnNames="autoid"/>
+            </column>
+            <column name="liquibase_trash_types_import_system_id" type="VARCHAR(6)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="liquibase_pickup_districts_import_system_id" type="VARCHAR(6)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="import base data for tb_pickups" runOnChange="true" author="fas">
+        <loadUpdateData tableName="tb_pickups"
+                        primaryKey="liquibase_trash_types_import_system_id,liquibase_pickup_districts_import_system_id"
+                        separator=","
+                        file="db/changelog/baseData/tb_pickups.csv">
+            <column name="date" type="DATE"/>
+            <column name="liquibase_trash_types_import_system_id" type="STRING"/>
+            <column name="liquibase_pickup_districts_import_system_id" type="STRING"/>
+        </loadUpdateData>
+        <sql>
+            UPDATE tb_pickups tp
+            SET trash_type_ref = (
+                SELECT autoid
+                FROM tb_trash_types ttt
+                WHERE tp.liquibase_trash_types_import_system_id = ttt.system_id
+            )
+        </sql>
+        <sql>
+            UPDATE tb_pickups tp
+            SET pickup_district_ref = (
+                SELECT autoid
+                FROM tb_pickup_districts tc
+                WHERE tp.liquibase_pickup_districts_import_system_id = tc.system_id
+            )
+        </sql>
+    </changeSet>
+
+</databaseChangeLog>

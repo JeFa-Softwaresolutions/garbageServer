@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet id="create tb_cities" author="fas">
+        <createTable tableName="tb_cities">
+            <column name="autoid" type="BIGINT" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false" unique="true"/>
+            </column>
+            <column name="system_id" type="VARCHAR(6)">
+                <constraints nullable="false" unique="true"/>
+            </column>
+            <column name="display_name" type="VARCHAR(64)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="district_ref" type="BIGINT">
+                <constraints foreignKeyName="fk_cities_districts" referencedTableName="tb_districts" referencedColumnNames="autoid"/>
+            </column>
+            <column name="liquibase_district_import_system_id" type="VARCHAR(6)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="import base data for tb_cities" runOnChange="true" author="fas">
+        <loadUpdateData tableName="tb_cities"
+                        primaryKey="system_id"
+                        separator=","
+                        file="db/changelog/baseData/tb_cities.csv">
+            <column name="system_id" type="STRING"/>
+            <column name="display_name" type="STRING"/>
+            <column name="liquibase_district_import_system_id" type="STRING"/>
+        </loadUpdateData>
+        <sql>
+            UPDATE tb_cities tc
+            SET district_ref = (
+                SELECT autoid
+                FROM tb_districts td
+                WHERE tc.liquibase_district_import_system_id = td.system_id
+            )
+        </sql>
+    </changeSet>
+
+</databaseChangeLog>

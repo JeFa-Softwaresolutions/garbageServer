@@ -4,38 +4,6 @@
                    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
                    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
 
-    <changeSet id="createTable" author="authorName">
-        <createTable tableName="example_table">
-            <column name="id" type="BIGINT">
-                <constraints primaryKey="true" nullable="false" />
-            </column>
-            <column name="name" type="VARCHAR(255)" />
-            <column name="value" type="INT" />
-
-            <!-- Optional: Add additional columns as needed -->
-        </createTable>
-    </changeSet>
-
-    <changeSet id="insertTestData" author="authorName">
-        <insert tableName="example_table">
-            <column name="id" value="1" />
-            <column name="name" value="TestName1" />
-            <column name="value" value="100" />
-        </insert>
-
-        <insert tableName="example_table">
-            <column name="id" value="2" />
-            <column name="name" value="TestName2" />
-            <column name="value" value="200" />
-        </insert>
-    </changeSet>
-
-    <changeSet id="add i love you" author="fas">
-        <insert tableName="example_table">
-            <column name="id" value="3" />
-            <column name="name" value="Ich liebe dich mein Mädchen" />
-            <column name="value" value="500000000" />
-        </insert>
-    </changeSet>
+    <include file="/db/changelog/basedata.xml" />
 
 </databaseChangeLog>
