@@ -1,5 +1,5 @@
 # Start with a base image containing Java runtime 17 for the build stage
-FROM openjdk:17-jdk-slim as build
+FROM adoptopenjdk:17-jre-hotspot as build
 
 # Add Author info
 LABEL maintainer="yourname@example.com"
@@ -20,6 +20,6 @@ RUN chmod +x ./mvnw
 RUN ./mvnw clean package -DskipTests
 
 # Run stage
-FROM openjdk:17-jre-slim
+FROM adoptopenjdk:17-jre-hotspot
 COPY --from=build /app/target/*.jar app.jar
 ENTRYPOINT ["java","-jar","app.jar"]
