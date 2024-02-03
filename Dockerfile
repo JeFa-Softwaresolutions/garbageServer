@@ -1,5 +1,5 @@
-# Start with a base image containing Java runtime
-FROM openjdk:11-jdk-slim as build
+# Start with a base image containing Java runtime 17 for the build stage
+FROM openjdk:17-jdk-slim as build
 
 # Add Author info
 LABEL maintainer="yourname@example.com"
@@ -7,12 +7,10 @@ LABEL maintainer="yourname@example.com"
 # Set the working directory in Docker
 WORKDIR /app
 
-# Copy the Maven Wrapper and pom.xml file
+# Copy the Maven Wrapper, pom.xml file, and source code
 COPY mvnw .
 COPY .mvn .mvn
 COPY pom.xml .
-
-# Copy your source code
 COPY src src
 
 # Make the Maven Wrapper script executable
@@ -22,6 +20,6 @@ RUN chmod +x ./mvnw
 RUN ./mvnw clean package -DskipTests
 
 # Run stage
-FROM openjdk:11-jre-slim
+FROM openjdk:17-jre-slim
 COPY --from=build /app/target/*.jar app.jar
 ENTRYPOINT ["java","-jar","app.jar"]
