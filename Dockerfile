@@ -10,10 +10,8 @@ COPY pom.xml .
 # Copy your source code
 COPY src src
 
-RUN chmod +x ./mvnw
-
 # Build the application
-RUN ./mvnw clean package -DskipTests
+RUN mvn clean package -DskipTests
 
 # Run stage
 FROM openjdk:11-jre-slim
