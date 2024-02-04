@@ -1,54 +1,54 @@
 liquibase_state_import_system_id,system_id,display_name
-NORWES,AACHEN,Städteregion Aachen
-NORWES,BIEELD,Kreisfreie Stadt Bielefeld
-NORWES,BOCHUM,Kreisfreie Stadt Bochum
-NORWES,STBONN,Kreisfreie Stadt Bonn
-NORWES,BORKEN,Kreis Borken
-NORWES,BOTROP,Kreisfreie Stadt Bottrop
-NORWES,COEELD,Kreis Coesfeld
-NORWES,DORUND,Kreisfreie Stadt Dortmund
-NORWES,DUIURG,Kreisfreie Stadt Duisburg
-NORWES,DUEREN,Kreis Düren
-NORWES,DUEORF,Kreisfreie Stadt Düsseldorf
-NORWES,ENNUHR,Ennepe-Ruhr-Kreis
-NORWES,STESSE,Kreisfreie Stadt Essen
-NORWES,EUSHEN,Kreis Euskirchen
-NORWES,GELHEN,Kreisfreie Stadt Gelsenkirchen
-NORWES,GUELOH,Kreis Gütersloh
-NORWES,STHAGE,Kreisfreie Stadt Hagen
-NORWES,STHAMM,Kreisfreie Stadt Hamm
-NORWES,HEIERG,Kreis Heinsberg
-NORWES,HERORD,Kreis Herford
-NORWES,STHERN,Kreisfreie Stadt Herne
-NORWES,HOCEIS,Hochsauerlandkreis
-NORWES,HOETER,Kreis Höxter
-NORWES,KREKLE,Kreis Kleve
-NORWES,STKOEL,Kreisfreie Stadt Köln
-NORWES,KREELD,Kreisfreie Stadt Krefeld
-NORWES,LEVSEN,Kreisfreie Stadt Leverkusen
-NORWES,KRLIPP,Kreis Lippe
-NORWES,MAEHER,Märkischer Kreis
-NORWES,METANN,Kreis Mettmann
-NORWES,MINCKE,Kreis Minden-Lübbecke
-NORWES,MOEACH,Kreisfreie Stadt Mönchengladbach
-NORWES,MUEUHR,Kreisfreie Stadt Mülheim an der Ruhr
-NORWES,MUETER,Kreisfreie Stadt Münster
-NORWES,OBEHER,Oberbergischer Kreis
-NORWES,OBESEN,Kreisfreie Stadt Oberhausen
-NORWES,KROLPE,Kreis Olpe
-NORWES,PADORN,Kreis Paderborn
-NORWES,RECSEN,Kreis Recklingshausen
-NORWES,REMEID,Kreisfreie Stadt Remscheid
-NORWES,KRERFT,Rhein-Erft-Kreis
-NORWES,KRRHEI,Rheinisch-Bergischer Kreis
-NORWES,KRNEUS,Rhein-Kreis Neuss
-NORWES,KRSIEG,Rhein-Sieg-Kreis
-NORWES,SIEEIN,Kreis Siegen-Wittgenstein
-NORWES,KRSOES,Kreis Soest
-NORWES,SOLING,Kreisfreie Stadt Solingen
-NORWES,STEINF,Kreis Steinfurt
-NORWES,KRUNNA,Kreis Unna
-NORWES,VIERSE,Kreis Viersen
-NORWES,WAREND,Kreis Warendorf
-NORWES,KRWESE,Kreis Wesel
-NORWES,WUPPER,Kreisfreie Stadt Wuppertal
+STNORWES,NWAACHEN,Städteregion Aachen
+STNORWES,NWBIEELD,Kreisfreie Stadt Bielefeld
+STNORWES,NWBOCHUM,Kreisfreie Stadt Bochum
+STNORWES,NWSTBONN,Kreisfreie Stadt Bonn
+STNORWES,NWBORKEN,Kreis Borken
+STNORWES,NWBOTROP,Kreisfreie Stadt Bottrop
+STNORWES,NWCOEELD,Kreis Coesfeld
+STNORWES,NWDORUND,Kreisfreie Stadt Dortmund
+STNORWES,NWDUIURG,Kreisfreie Stadt Duisburg
+STNORWES,NWDUEREN,Kreis Düren
+STNORWES,NWDUEORF,Kreisfreie Stadt Düsseldorf
+STNORWES,NWENNUHR,Ennepe-Ruhr-Kreis
+STNORWES,NWSTESSE,Kreisfreie Stadt Essen
+STNORWES,NWEUSHEN,Kreis Euskirchen
+STNORWES,NWGELHEN,Kreisfreie Stadt Gelsenkirchen
+STNORWES,NWGUELOH,Kreis Gütersloh
+STNORWES,NWSTHAGE,Kreisfreie Stadt Hagen
+STNORWES,NWSTHAMM,Kreisfreie Stadt Hamm
+STNORWES,NWHEIERG,Kreis Heinsberg
+STNORWES,NWHERORD,Kreis Herford
+STNORWES,NWSTHERN,Kreisfreie Stadt Herne
+STNORWES,NWHOCEIS,Hochsauerlandkreis
+STNORWES,NWHOETER,Kreis Höxter
+STNORWES,NWKREKLE,Kreis Kleve
+STNORWES,NWSTKOEL,Kreisfreie Stadt Köln
+STNORWES,NWKREELD,Kreisfreie Stadt Krefeld
+STNORWES,NWLEVSEN,Kreisfreie Stadt Leverkusen
+STNORWES,NWKRLIPP,Kreis Lippe
+STNORWES,NWMAEHER,Märkischer Kreis
+STNORWES,NWMETANN,Kreis Mettmann
+STNORWES,NWMINCKE,Kreis Minden-Lübbecke
+STNORWES,NWMOEACH,Kreisfreie Stadt Mönchengladbach
+STNORWES,NWMUEUHR,Kreisfreie Stadt Mülheim an der Ruhr
+STNORWES,NWMUETER,Kreisfreie Stadt Münster
+STNORWES,NWOBEHER,Oberbergischer Kreis
+STNORWES,NWOBESEN,Kreisfreie Stadt Oberhausen
+STNORWES,NWKROLPE,Kreis Olpe
+STNORWES,NWPADORN,Kreis Paderborn
+STNORWES,NWRECSEN,Kreis Recklingshausen
+STNORWES,NWREMEID,Kreisfreie Stadt Remscheid
+STNORWES,NWKRERFT,Rhein-Erft-Kreis
+STNORWES,NWKRRHEI,Rheinisch-Bergischer Kreis
+STNORWES,NWKRNEUS,Rhein-Kreis Neuss
+STNORWES,NWKRSIEG,Rhein-Sieg-Kreis
+STNORWES,NWSIEEIN,Kreis Siegen-Wittgenstein
+STNORWES,NWKRSOES,Kreis Soest
+STNORWES,NWSOLING,Kreisfreie Stadt Solingen
+STNORWES,NWSTEINF,Kreis Steinfurt
+STNORWES,NWKRUNNA,Kreis Unna
+STNORWES,NWVIERSE,Kreis Viersen
+STNORWES,NWWAREND,Kreis Warendorf
+STNORWES,NWKRWESE,Kreis Wesel
+STNORWES,NWWUPPER,Kreisfreie Stadt Wuppertal

@@ -1,9 +1,9 @@
 liquibase_city_import_system_id,system_id,display_name
-HUEVEN,HUEGRA,Restabfall Grau
-HUEVEN,HUERED,Restabfall Rot
-HUEVEN,HUEORA,Restabfall Orange
-HUEVEN,HUEBRO,Bioabfall
-HUEVEN,HUEBLU,Papierabfall
-HUEVEN,HUEGRE,Grünschnitt
-HUEVEN,HUEYEL,Leichtverpackungen
-HUEVEN,HUETOX,Schadstofftermine
+HSHUEVEN,HUEREGRA,Restabfall Grau
+HSHUEVEN,HUERERED,Restabfall Rot
+HSHUEVEN,HUEREORA,Restabfall Orange
+HSHUEVEN,HUEBIBRO,Bioabfall
+HSHUEVEN,HUEPABLU,Papierabfall
+HSHUEVEN,HUEGRGRE,Grünschnitt
+HSHUEVEN,HUELEYEL,Leichtverpackungen
+HSHUEVEN,HUESCTOX,Schadstofftermine

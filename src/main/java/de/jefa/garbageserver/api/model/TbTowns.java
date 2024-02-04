@@ -16,7 +16,7 @@ public class TbTowns {
     private long autoid;
 
     @Basic
-    @Column(name = "system_id", nullable = false, length = 6)
+    @Column(name = "system_id", nullable = false, length = 8)
     private String systemId;
 
     @Basic

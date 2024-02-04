@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet id="change systemId for tb_states to 8 digits" author="fas">
+        <modifyDataType tableName="tb_states" columnName="system_id" newDataType="VARCHAR(8)"/>
+    </changeSet>
+
+    <changeSet id="change systemId for tb_districts to 8 digits" author="fas">
+        <modifyDataType tableName="tb_districts" columnName="system_id" newDataType="VARCHAR(8)"/>
+    </changeSet>
+
+    <changeSet id="change liquibase value for tb_districts to 8 digits" author="fas">
+        <modifyDataType tableName="tb_districts" columnName="liquibase_state_import_system_id" newDataType="VARCHAR(8)"/>
+    </changeSet>
+
+    <changeSet id="change systemId for tb_cities to 8 digits" author="fas">
+        <modifyDataType tableName="tb_cities" columnName="system_id" newDataType="VARCHAR(8)"/>
+    </changeSet>
+
+    <changeSet id="change liquibase value for tb_cities to 8 digits" author="fas">
+        <modifyDataType tableName="tb_cities" columnName="liquibase_district_import_system_id" newDataType="VARCHAR(8)"/>
+    </changeSet>
+
+    <changeSet id="change systemId for tb_towns to 8 digits" author="fas">
+        <modifyDataType tableName="tb_towns" columnName="system_id" newDataType="VARCHAR(8)"/>
+    </changeSet>
+
+    <changeSet id="change liquibase value for tb_towns to 8 digits" author="fas">
+        <modifyDataType tableName="tb_towns" columnName="liquibase_city_import_system_id" newDataType="VARCHAR(8)"/>
+        <modifyDataType tableName="tb_towns" columnName="liquibase_pickup_districts_import_system_id" newDataType="VARCHAR(8)"/>
+    </changeSet>
+
+    <changeSet id="change systemId for tb_streets to 8 digits" author="fas">
+        <modifyDataType tableName="tb_streets" columnName="system_id" newDataType="VARCHAR(8)"/>
+    </changeSet>
+
+    <changeSet id="change liquibase value for tb_streets to 8 digits" author="fas">
+        <modifyDataType tableName="tb_streets" columnName="liquibase_city_import_system_id" newDataType="VARCHAR(8)"/>
+        <modifyDataType tableName="tb_streets" columnName="liquibase_pickup_districts_import_system_id" newDataType="VARCHAR(8)"/>
+    </changeSet>
+
+    <changeSet id="change systemId for tb_pickup_districts to 8 digits" author="fas">
+        <modifyDataType tableName="tb_pickup_districts" columnName="system_id" newDataType="VARCHAR(8)"/>
+    </changeSet>
+
+    <changeSet id="change systemId for tb_trash_types to 8 digits" author="fas">
+        <modifyDataType tableName="tb_trash_types" columnName="system_id" newDataType="VARCHAR(8)"/>
+    </changeSet>
+
+    <changeSet id="change liquibase value for tb_trash_types to 8 digits" author="fas">
+        <modifyDataType tableName="tb_trash_types" columnName="liquibase_city_import_system_id" newDataType="VARCHAR(8)"/>
+    </changeSet>
+
+    <changeSet id="change liquibase values for tb_pickups to 8 digits" author="fas">
+        <modifyDataType tableName="tb_pickups" columnName="liquibase_trash_types_import_system_id" newDataType="VARCHAR(8)"/>
+        <modifyDataType tableName="tb_pickups" columnName="liquibase_pickup_districts_import_system_id" newDataType="VARCHAR(8)"/>
+    </changeSet>
+    
+</databaseChangeLog>
