@@ -29,7 +29,7 @@
 
     <changeSet id="import base data for tb_pickups" runOnChange="true" author="fas">
         <loadUpdateData tableName="tb_pickups"
-                        primaryKey="liquibase_trash_types_import_system_id,liquibase_pickup_districts_import_system_id"
+                        primaryKey="liquibase_trash_types_import_system_id,liquibase_pickup_districts_import_system_id,date"
                         separator=","
                         file="db/changelog/baseData/tb_pickups.csv">
             <column name="date" type="DATE"/>
