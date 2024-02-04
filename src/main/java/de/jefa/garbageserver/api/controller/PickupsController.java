@@ -23,4 +23,9 @@ public class PickupsController {
     public List<TbPickups> getPickupsByPickupDistrictsSystemIdAndTrashTypesSystemId(@PathVariable String pickupDistrictRef, @PathVariable String trashTypeRef) {
         return pickupsService.findByPickupDistrictSystemIdAndTrashTypeSystemid(pickupDistrictRef, trashTypeRef);
     }
+
+    @GetMapping("/pickup_district_trash_type/next/{pickupDistrictRef}&{trashTypeRef}")
+    public TbPickups getNextPickupByPickupDistrictsSystemIdAndTrashTypesSystemId(@PathVariable String pickupDistrictRef, @PathVariable String trashTypeRef) {
+        return pickupsService.findNextByPickupDistrictSystemIdAndTrashTypeSystemid(pickupDistrictRef, trashTypeRef);
+    }
 }
