@@ -27,31 +27,4 @@
         </createTable>
     </changeSet>
 
-    <changeSet id="import base data for tb_pickups" runOnChange="true" author="fas">
-        <loadUpdateData tableName="tb_pickups"
-                        primaryKey="liquibase_trash_types_import_system_id,liquibase_pickup_districts_import_system_id,date"
-                        separator=","
-                        file="db/changelog/baseData/tb_pickups.csv">
-            <column name="date" type="DATE"/>
-            <column name="liquibase_trash_types_import_system_id" type="STRING"/>
-            <column name="liquibase_pickup_districts_import_system_id" type="STRING"/>
-        </loadUpdateData>
-        <sql>
-            UPDATE tb_pickups tp
-            SET trash_type_ref = (
-                SELECT autoid
-                FROM tb_trash_types ttt
-                WHERE tp.liquibase_trash_types_import_system_id = ttt.system_id
-            )
-        </sql>
-        <sql>
-            UPDATE tb_pickups tp
-            SET pickup_district_ref = (
-                SELECT autoid
-                FROM tb_pickup_districts tc
-                WHERE tp.liquibase_pickup_districts_import_system_id = tc.system_id
-            )
-        </sql>
-    </changeSet>
-
 </databaseChangeLog>

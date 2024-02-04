@@ -24,23 +24,4 @@
         </createTable>
     </changeSet>
 
-    <changeSet id="import base data for tb_districts" runOnChange="true" author="fas">
-        <loadUpdateData tableName="tb_districts"
-                  primaryKey="system_id"
-                  separator=","
-                  file="db/changelog/baseData/tb_districts.csv">
-            <column name="system_id" type="STRING"/>
-            <column name="display_name" type="STRING"/>
-            <column name="liquibase_state_import_system_id" type="STRING"/>
-        </loadUpdateData>
-        <sql>
-            UPDATE tb_districts td
-            SET state_ref = (
-                SELECT autoid
-                FROM tb_states ts
-                WHERE td.liquibase_state_import_system_id = ts.system_id
-            )
-        </sql>
-    </changeSet>
-
 </databaseChangeLog>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet id="import base data for tb_cities" runOnChange="true" author="fas">
+        <loadUpdateData tableName="tb_cities"
+                        primaryKey="system_id"
+                        separator=","
+                        file="db/changelog/baseData/import/tb_cities.csv">
+            <column name="system_id" type="STRING"/>
+            <column name="display_name" type="STRING"/>
+            <column name="liquibase_district_import_system_id" type="STRING"/>
+            <column name="need_streets_for_calc_flag" type="BOOLEAN"/>
+        </loadUpdateData>
+        <sql>
+            UPDATE tb_cities tc
+            SET district_ref = (
+                SELECT autoid
+                FROM tb_districts td
+                WHERE tc.liquibase_district_import_system_id = td.system_id
+            )
+        </sql>
+    </changeSet>
+
+</databaseChangeLog>

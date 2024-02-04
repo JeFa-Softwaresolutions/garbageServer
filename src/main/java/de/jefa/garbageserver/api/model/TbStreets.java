@@ -24,9 +24,9 @@ public class TbStreets {
     private String displayName;
 
     @Basic
-    @Column(name = "town_ref")
+    @Column(name = "city_ref")
     @JsonIgnore
-    private Long townRef;
+    private Long cityRef;
 
     @Basic
     @Column(name = "pickup_district_ref")
@@ -34,9 +34,9 @@ public class TbStreets {
     private Long pickupDistrictRef;
 
     @Basic
-    @Column(name = "liquibase_town_import_system_id", nullable = false, length = 6)
+    @Column(name = "liquibase_city_import_system_id", nullable = false, length = 6)
     @JsonIgnore
-    private String liquibaseTownImportSystemId;
+    private String liquibaseCityImportSystemId;
 
     @Basic
     @Column(name = "liquibase_pickup_districts_import_system_id", nullable = false, length = 6)
@@ -67,12 +67,12 @@ public class TbStreets {
         this.displayName = displayName;
     }
 
-    public Long getTownRef() {
-        return townRef;
+    public Long getCityRef() {
+        return cityRef;
     }
 
-    public void setTownRef(Long townRef) {
-        this.townRef = townRef;
+    public void setCityRef(Long cityRef) {
+        this.cityRef = cityRef;
     }
 
     public Long getPickupDistrictRef() {
@@ -83,12 +83,12 @@ public class TbStreets {
         this.pickupDistrictRef = pickupDistrictRef;
     }
 
-    public String getLiquibaseTownImportSystemId() {
-        return liquibaseTownImportSystemId;
+    public String getLiquibaseCityImportSystemId() {
+        return liquibaseCityImportSystemId;
     }
 
-    public void setLiquibaseTownImportSystemId(String liquibaseTownImportSystemId) {
-        this.liquibaseTownImportSystemId = liquibaseTownImportSystemId;
+    public void setLiquibaseCityImportSystemId(String liquibaseCityImportSystemId) {
+        this.liquibaseCityImportSystemId = liquibaseCityImportSystemId;
     }
 
     public String getLiquibasePickupDistrictsImportSystemId() {
@@ -104,11 +104,11 @@ public class TbStreets {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         TbStreets tbStreets = (TbStreets) o;
-        return autoid == tbStreets.autoid && Objects.equals(systemId, tbStreets.systemId) && Objects.equals(displayName, tbStreets.displayName) && Objects.equals(townRef, tbStreets.townRef) && Objects.equals(pickupDistrictRef, tbStreets.pickupDistrictRef) && Objects.equals(liquibaseTownImportSystemId, tbStreets.liquibaseTownImportSystemId) && Objects.equals(liquibasePickupDistrictsImportSystemId, tbStreets.liquibasePickupDistrictsImportSystemId);
+        return autoid == tbStreets.autoid && Objects.equals(systemId, tbStreets.systemId) && Objects.equals(displayName, tbStreets.displayName) && Objects.equals(cityRef, tbStreets.cityRef) && Objects.equals(pickupDistrictRef, tbStreets.pickupDistrictRef) && Objects.equals(liquibaseCityImportSystemId, tbStreets.liquibaseCityImportSystemId) && Objects.equals(liquibasePickupDistrictsImportSystemId, tbStreets.liquibasePickupDistrictsImportSystemId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(autoid, systemId, displayName, townRef, pickupDistrictRef, liquibaseTownImportSystemId, liquibasePickupDistrictsImportSystemId);
+        return Objects.hash(autoid, systemId, displayName, cityRef, pickupDistrictRef, liquibaseCityImportSystemId, liquibasePickupDistrictsImportSystemId);
     }
 }

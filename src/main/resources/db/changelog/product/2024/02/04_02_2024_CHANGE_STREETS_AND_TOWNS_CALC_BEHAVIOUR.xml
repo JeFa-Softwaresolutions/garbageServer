@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet id="remove unused flag" author="fas">
+        <dropColumn tableName="tb_towns" columnName="need_streets_for_calc_flag"/>
+    </changeSet>
+
+    <changeSet id="remove town ref on tb_streets" author="fas">
+        <dropColumn tableName="tb_streets" columnName="town_ref"/>
+        <dropColumn tableName="tb_streets" columnName="liquibase_town_import_system_id"/>
+    </changeSet>
+
+    <changeSet id="add city ref on tb_streets" author="fas">
+        <addColumn tableName="tb_streets">
+            <column name="city_ref" type="BIGINT">
+                <constraints foreignKeyName="fk_streets_cities" referencedTableName="tb_cities" referencedColumnNames="autoid"/>
+            </column>
+            <column name="liquibase_city_import_system_id" type="VARCHAR(6)">
+                <constraints nullable="false"/>
+            </column>
+        </addColumn>
+    </changeSet>
+
+    <changeSet id="add calc flag for tb_cities" author="fas">
+        <addColumn tableName="tb_cities">
+            <column name="need_streets_for_calc_flag" type="BOOLEAN"/>
+        </addColumn>
+    </changeSet>
+    
+</databaseChangeLog>

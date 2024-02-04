@@ -24,9 +24,9 @@ public class StreetsController {
         return streetsService.findAll();
     }
 
-    @GetMapping("/town/{systemId}")
-    public List<TbStreets> getStreetsByTownsSystemId(@PathVariable String systemId) {
-        return streetsService.findByTownsSystemId(systemId);
+    @GetMapping("/city/{systemId}")
+    public List<TbStreets> getStreetsByCitiesSystemId(@PathVariable String systemId) {
+        return streetsService.findByCitiesSystemId(systemId);
     }
 
     @GetMapping("/{systemId}")

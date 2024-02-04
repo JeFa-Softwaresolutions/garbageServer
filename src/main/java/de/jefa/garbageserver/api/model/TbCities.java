@@ -1,5 +1,6 @@
 package de.jefa.garbageserver.api.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.util.Objects;
@@ -11,6 +12,7 @@ public class TbCities {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(name = "autoid", nullable = false)
+    @JsonIgnore
     private long autoid;
 
     @Basic
@@ -22,11 +24,17 @@ public class TbCities {
     private String displayName;
 
     @Basic
+    @Column(name = "need_streets_for_calc_flag", nullable = false)
+    private boolean needStreetsForCalcFlag;
+
+    @Basic
     @Column(name = "district_ref")
+    @JsonIgnore
     private Long districtRef;
 
     @Basic
     @Column(name = "liquibase_district_import_system_id", nullable = false, length = 6)
+    @JsonIgnore
     private String liquibaseDistrictImportSystemId;
 
     public long getAutoid() {
@@ -51,6 +59,14 @@ public class TbCities {
 
     public void setDisplayName(String displayName) {
         this.displayName = displayName;
+    }
+
+    public boolean isNeedStreetsForCalcFlag() {
+        return needStreetsForCalcFlag;
+    }
+
+    public void setNeedStreetsForCalcFlag(boolean needStreetsForCalcFlag) {
+        this.needStreetsForCalcFlag = needStreetsForCalcFlag;
     }
 
     public Long getDistrictRef() {

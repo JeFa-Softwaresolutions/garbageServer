@@ -30,32 +30,4 @@
         </createTable>
     </changeSet>
 
-    <changeSet id="import base data for tb_streets" runOnChange="true" author="fas">
-        <loadUpdateData tableName="tb_streets"
-                        primaryKey="system_id"
-                        separator=","
-                        file="db/changelog/baseData/tb_streets.csv">
-            <column name="system_id" type="STRING"/>
-            <column name="display_name" type="STRING"/>
-            <column name="liquibase_town_import_system_id" type="STRING"/>
-            <column name="liquibase_pickup_districts_import_system_id" type="STRING"/>
-        </loadUpdateData>
-        <sql>
-            UPDATE tb_streets ts
-            SET town_ref = (
-                SELECT autoid
-                FROM tb_towns tt
-                WHERE ts.liquibase_town_import_system_id = tt.system_id
-            )
-        </sql>
-        <sql>
-            UPDATE tb_towns tt
-            SET pickup_district_ref = (
-                SELECT autoid
-                FROM tb_pickup_districts tc
-                WHERE tt.liquibase_pickup_districts_import_system_id = tc.system_id
-            )
-        </sql>
-    </changeSet>
-
 </databaseChangeLog>

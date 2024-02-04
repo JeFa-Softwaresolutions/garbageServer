@@ -18,14 +18,4 @@
         </createTable>
     </changeSet>
 
-    <changeSet id="insert states basedata" runOnChange="true" author="fas">
-        <loadUpdateData tableName="tb_states"
-                  primaryKey="system_id"
-                  separator=","
-                  file="db/changelog/baseData/tb_states.csv">
-            <column name="system_id" type="STRING"/>
-            <column name="display_name" type="STRING"/>
-        </loadUpdateData>
-    </changeSet>
-
 </databaseChangeLog>

@@ -9,8 +9,8 @@ import java.util.List;
 
 public interface StreetsRepository extends JpaRepository<TbStreets, Long> {
 
-    @Query("SELECT s FROM TbStreets s where s.townRef = (SELECT t.autoid FROM TbTowns t WHERE t.systemId = :systemId)")
-    List<TbStreets> findByTownsSystemId(@Param("systemId") String systemId);
+    @Query("SELECT s FROM TbStreets s where s.cityRef = (SELECT tc.autoid FROM TbCities tc WHERE tc.systemId = :systemId)")
+    List<TbStreets> findByCitiesSystemId(@Param("systemId") String systemId);
 
     List<TbStreets> findBySystemId(String systemId);
 }

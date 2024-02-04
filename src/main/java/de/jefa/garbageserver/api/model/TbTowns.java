@@ -24,10 +24,6 @@ public class TbTowns {
     private String displayName;
 
     @Basic
-    @Column(name = "need_streets_for_calc_flag", nullable = false)
-    private boolean needStreetsForCalcFlag;
-
-    @Basic
     @Column(name = "city_ref")
     @JsonIgnore
     private Long cityRef;
@@ -71,14 +67,6 @@ public class TbTowns {
         this.displayName = displayName;
     }
 
-    public boolean isNeedStreetsForCalcFlag() {
-        return needStreetsForCalcFlag;
-    }
-
-    public void setNeedStreetsForCalcFlag(boolean needStreetsForCalcFlag) {
-        this.needStreetsForCalcFlag = needStreetsForCalcFlag;
-    }
-
     public Long getCityRef() {
         return cityRef;
     }
@@ -116,11 +104,11 @@ public class TbTowns {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         TbTowns tbTowns = (TbTowns) o;
-        return autoid == tbTowns.autoid && needStreetsForCalcFlag == tbTowns.needStreetsForCalcFlag && Objects.equals(systemId, tbTowns.systemId) && Objects.equals(displayName, tbTowns.displayName) && Objects.equals(cityRef, tbTowns.cityRef) && Objects.equals(pickupDistrictRef, tbTowns.pickupDistrictRef) && Objects.equals(liquibaseCityImportSystemId, tbTowns.liquibaseCityImportSystemId) && Objects.equals(liquibasePickupDistrictsImportSystemId, tbTowns.liquibasePickupDistrictsImportSystemId);
+        return autoid == tbTowns.autoid && Objects.equals(systemId, tbTowns.systemId) && Objects.equals(displayName, tbTowns.displayName) && Objects.equals(cityRef, tbTowns.cityRef) && Objects.equals(pickupDistrictRef, tbTowns.pickupDistrictRef) && Objects.equals(liquibaseCityImportSystemId, tbTowns.liquibaseCityImportSystemId) && Objects.equals(liquibasePickupDistrictsImportSystemId, tbTowns.liquibasePickupDistrictsImportSystemId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(autoid, systemId, displayName, needStreetsForCalcFlag, cityRef, pickupDistrictRef, liquibaseCityImportSystemId, liquibasePickupDistrictsImportSystemId);
+        return Objects.hash(autoid, systemId, displayName, cityRef, pickupDistrictRef, liquibaseCityImportSystemId, liquibasePickupDistrictsImportSystemId);
     }
 }

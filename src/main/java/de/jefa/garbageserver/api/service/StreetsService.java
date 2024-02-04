@@ -19,8 +19,8 @@ public class StreetsService {
         return streetsRepository.findAll();
     }
 
-    public List<TbStreets> findByTownsSystemId(String systemId) {
-        return streetsRepository.findByTownsSystemId(systemId);
+    public List<TbStreets> findByCitiesSystemId(String systemId) {
+        return streetsRepository.findByCitiesSystemId(systemId);
     }
 
     public List<TbStreets> findBySystemId(String systemId) {

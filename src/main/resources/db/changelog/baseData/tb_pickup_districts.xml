@@ -18,14 +18,4 @@
         </createTable>
     </changeSet>
 
-    <changeSet id="import base data for tb_pickup_districts" runOnChange="true" author="fas">
-        <loadUpdateData tableName="tb_pickup_districts"
-                        primaryKey="system_id"
-                        separator=","
-                        file="db/changelog/baseData/tb_pickup_districts.csv">
-            <column name="system_id" type="STRING"/>
-            <column name="display_name" type="STRING"/>
-        </loadUpdateData>
-    </changeSet>
-
 </databaseChangeLog>

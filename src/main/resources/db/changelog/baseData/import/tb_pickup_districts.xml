@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet id="import base data for tb_pickup_districts" runOnChange="true" author="fas">
+        <loadUpdateData tableName="tb_pickup_districts"
+                        primaryKey="system_id"
+                        separator=","
+                        file="db/changelog/baseData/import/tb_pickup_districts.csv">
+            <column name="system_id" type="STRING"/>
+            <column name="display_name" type="STRING"/>
+        </loadUpdateData>
+    </changeSet>
+
+</databaseChangeLog>
