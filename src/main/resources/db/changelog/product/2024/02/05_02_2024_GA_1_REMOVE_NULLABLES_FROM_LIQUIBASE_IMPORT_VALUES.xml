@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet id="remove nullable from liquibase import value from tb_districts" author="fas">
+        <dropNotNullConstraint tableName="tb_districts" columnName="liquibase_state_import_system_id"/>
+    </changeSet>
+
+    <changeSet id="remove nullable from liquibase import value from tb_cities" author="fas">
+        <dropNotNullConstraint tableName="tb_cities" columnName="liquibase_district_import_system_id"/>
+    </changeSet>
+
+    <changeSet id="remove nullable from liquibase import value from tb_trash_types" author="fas">
+        <dropNotNullConstraint tableName="tb_trash_types" columnName="liquibase_city_import_system_id"/>
+    </changeSet>
+
+    <changeSet id="remove nullable from liquibase import value from tb_towns" author="fas">
+        <dropNotNullConstraint tableName="tb_towns" columnName="liquibase_city_import_system_id"/>
+        <dropNotNullConstraint tableName="tb_towns" columnName="liquibase_pickup_districts_import_system_id"/>
+    </changeSet>
+
+    <changeSet id="remove nullable from liquibase import value from tb_streets" author="fas">
+        <dropNotNullConstraint tableName="tb_streets" columnName="liquibase_city_import_system_id"/>
+        <dropNotNullConstraint tableName="tb_streets" columnName="liquibase_pickup_districts_import_system_id"/>
+    </changeSet>
+
+    <changeSet id="remove nullable from liquibase import value from tb_pickups" author="fas">
+        <dropNotNullConstraint tableName="tb_pickups" columnName="liquibase_trash_types_import_system_id"/>
+        <dropNotNullConstraint tableName="tb_pickups" columnName="liquibase_pickup_districts_import_system_id"/>
+    </changeSet>
+    
+</databaseChangeLog>

@@ -6,5 +6,6 @@
 
     <include file="/db/changelog/product/2024/02/04_02_2024_CHANGE_STREETS_AND_TOWNS_CALC_BEHAVIOUR.xml"/>
     <include file="/db/changelog/product/2024/02/04_02_2024_CHANGE_SYSTEM_ID_TO_8_DIGITS.xml"/>
+    <include file="/db/changelog/product/2024/02/05_02_2024_GA_1_REMOVE_NULLABLES_FROM_LIQUIBASE_IMPORT_VALUES.xml"/>
 
 </databaseChangeLog>

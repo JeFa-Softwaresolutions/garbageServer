@@ -33,7 +33,7 @@ public class TbCities {
     private Long districtRef;
 
     @Basic
-    @Column(name = "liquibase_district_import_system_id", nullable = false, length = 6)
+    @Column(name = "liquibase_district_import_system_id", length = 6)
     @JsonIgnore
     private String liquibaseDistrictImportSystemId;
 

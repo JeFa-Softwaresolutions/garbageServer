@@ -31,12 +31,12 @@ public class TbPickups {
     private Long trashTypeRef;
 
     @Basic
-    @Column(name = "liquibase_trash_types_import_system_id", nullable = false, length = 6)
+    @Column(name = "liquibase_trash_types_import_system_id", length = 6)
     @JsonIgnore
     private String liquibaseTrashTypesImportSystemId;
 
     @Basic
-    @Column(name = "liquibase_pickup_districts_import_system_id", nullable = false, length = 6)
+    @Column(name = "liquibase_pickup_districts_import_system_id", length = 6)
     @JsonIgnore
     private String liquibasePickupDistrictsImportSystemId;
 

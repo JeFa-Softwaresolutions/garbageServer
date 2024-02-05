@@ -30,7 +30,7 @@ public class TbTrashTypes {
 
     @Basic
     @JsonIgnore
-    @Column(name = "liquibase_city_import_system_id", nullable = false, length = 6)
+    @Column(name = "liquibase_city_import_system_id", length = 6)
     private String liquibaseCityImportSystemId;
 
     public long getAutoid() {

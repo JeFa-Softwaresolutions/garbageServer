@@ -31,7 +31,7 @@ public class TbDistricts {
 
     @Basic
     @JsonIgnore
-    @Column(name = "liquibase_state_import_system_id", nullable = false, length = 6)
+    @Column(name = "liquibase_state_import_system_id", length = 6)
     private String liquibaseStateImportSystemId;
 
     public long getAutoid() {

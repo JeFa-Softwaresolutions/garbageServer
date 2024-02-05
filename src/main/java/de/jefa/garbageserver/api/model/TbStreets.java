@@ -34,12 +34,12 @@ public class TbStreets {
     private Long pickupDistrictRef;
 
     @Basic
-    @Column(name = "liquibase_city_import_system_id", nullable = false, length = 6)
+    @Column(name = "liquibase_city_import_system_id", length = 6)
     @JsonIgnore
     private String liquibaseCityImportSystemId;
 
     @Basic
-    @Column(name = "liquibase_pickup_districts_import_system_id", nullable = false, length = 6)
+    @Column(name = "liquibase_pickup_districts_import_system_id", length = 6)
     @JsonIgnore
     private String liquibasePickupDistrictsImportSystemId;
 
