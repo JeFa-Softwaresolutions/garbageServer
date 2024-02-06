@@ -23,7 +23,7 @@ RUN ./mvnw clean package -DskipTests
 FROM openjdk:17-jdk-slim
 
 ARG DATABASE_URL
+ENV DATABASE_URL=${DATABASE_URL}
 
 COPY --from=build /app/target/*.jar app.jar
-ENV SPRING_PROFILES_ACTIVE=prod
 ENTRYPOINT ["java","-jar","app.jar"]
