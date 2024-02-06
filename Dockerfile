@@ -2,7 +2,7 @@
 FROM openjdk:17-jdk-slim as build
 
 # Add Author info
-LABEL maintainer="yourname@example.com"
+LABEL maintainer="jefasoftwaresolutions@gmail.com"
 
 # Set the working directory in Docker
 WORKDIR /app
@@ -21,5 +21,9 @@ RUN ./mvnw clean package -DskipTests
 
 # Run stage
 FROM openjdk:17-jdk-slim
+
+ARG DATABASE_URL
+
 COPY --from=build /app/target/*.jar app.jar
+ENV SPRING_PROFILES_ACTIVE=prod
 ENTRYPOINT ["java","-jar","app.jar"]
