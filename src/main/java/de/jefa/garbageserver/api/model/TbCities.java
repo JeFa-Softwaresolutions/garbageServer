@@ -37,6 +37,11 @@ public class TbCities {
     @JsonIgnore
     private String liquibaseDistrictImportSystemId;
 
+    @Basic
+    @Column(name = "suggestion_ref")
+    @JsonIgnore
+    private Long suggestion_ref;
+
     public long getAutoid() {
         return autoid;
     }
@@ -83,6 +88,14 @@ public class TbCities {
 
     public void setLiquibaseDistrictImportSystemId(String liquibaseDistrictImportSystemId) {
         this.liquibaseDistrictImportSystemId = liquibaseDistrictImportSystemId;
+    }
+
+    public Long getSuggestion_ref() {
+        return suggestion_ref;
+    }
+
+    public void setSuggestion_ref(Long suggestion_ref) {
+        this.suggestion_ref = suggestion_ref;
     }
 
     @Override

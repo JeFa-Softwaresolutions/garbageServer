@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet id="add suggestion_ref field to tb_cities" author="fas">
+        <addColumn tableName="tb_cities">
+            <column name="suggestion_ref" type="BIGINT">
+                <constraints foreignKeyName="fk_cities_suggestions" referencedTableName="tb_suggestions" referencedColumnNames="autoid"/>
+            </column>
+        </addColumn>
+    </changeSet>
+    
+</databaseChangeLog>
